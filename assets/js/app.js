@@ -83,6 +83,6 @@ btnRegister.addEventListener('click', (event) => {
     }
 
     if (!invalidName && validEmail && validPassword && passwordsMatch) {
-        window.location.href = "/sucess"
+        window.location.href = "/success"
     }
 })
