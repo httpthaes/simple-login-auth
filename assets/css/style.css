@@ -96,7 +96,7 @@ body {
     color: #fff;
     font-weight: 600;
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-    margin-top: 20px;
+    margin: 25px 0 15px 0;
 }
 
 .btn:hover {
@@ -126,4 +126,18 @@ body {
 
 span {
     color: rgb(252, 62, 62);
+}
+
+#btn-success {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.container p {
+    text-align: center;
+    color: #bebebe;
+    font-size: 15px;
+    margin: 10px 0 35px 0;
 }
