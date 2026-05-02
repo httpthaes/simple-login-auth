@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script defer src="../assets/js/app.js"></script>
+    <title>Registro</title>
+</head>
+<body>
+    <main class="container">
+        <form action="#">
+            <h1>Olá, bem vindo de volta!</h1>
+
+            <div class="input-box">
+                <input type="email" id="email" required placeholder="E-mail">
+            </div>
+            <span id="email-error"></span>
+
+            <div class="input-box password">
+                <input type="password" class="input-password" required placeholder="Senha">
+                <i class="fa-regular fa-eye-slash fa-2xs" style="color: #bebebe;"></i>
+            </div> 
+            <span id="password-error"></span>
+
+            <div class="remember-password">
+                <label>
+                    <input type="checkbox">
+                    Lembrar senha
+                </label>
+                <a href="#">Esqueci a senha</a> 
+            </div>
+
+            <button type="submit" id="btn-login" class="btn">Entrar</button>
+
+            <div class="login-link">
+                <p>Ainda não possui conta? <a href="/register">Registrar</a></p>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

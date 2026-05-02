@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0d0d1a;
+    background-image:
+        radial-gradient(ellipse 70% 100% at -5% 20%, rgba(187, 147, 255, 0.8) 0%, rgba(120, 80, 220, 0.4) 40%, transparent 70%),
+        radial-gradient(ellipse 65% 100% at 10% 50%, rgba(100, 130, 255, 0.4) 0%, transparent 65%);
+}
+
+.container {
+    width: 500px;
+    background: transparent;
+    color: #fff;
+    padding: 30px 40px;
+}
+
+.container h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    margin: 20px 0 10px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.13);
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    color: #fff;
+    padding: 15px 45px 15px 15px;
+}
+
+.input-box input::placeholder {
+    color: #bebebe;
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+}
+
+.remember-password {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0 15px;
+}
+
+.remember-password label input {
+    accent-color: #818cf8;
+    margin-right: 5px;
+}
+
+.remember-password a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.remember-password a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to right,
+            #d9a1ff 0%,
+            #c0a3ff 40%,
+            #818cf8 70%,
+            #5c7aff 100%);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    margin-top: 20px;
+}
+
+.btn:hover {
+    border: 2px solid rgba(255, 255, 255, .2);
+    transition: 0.5s;
+}
+
+.login-link {
+    font-size: 14px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.login-link a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+.fa-regular {
+    cursor: pointer;
+}
+
+span {
+    color: rgb(252, 62, 62);
+}
