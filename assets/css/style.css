@@ -124,10 +124,6 @@ body {
     cursor: pointer;
 }
 
-span {
-    color: rgb(252, 62, 62);
-}
-
 #btn-success {
     display: flex;
     justify-content: center;
@@ -140,4 +136,39 @@ span {
     color: #bebebe;
     font-size: 15px;
     margin: 10px 0 35px 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px) }
+  to   { opacity: 1; transform: translateY(0) }
+}
+
+.input-box input {
+    transition: border-color 0.3s ease;
+}
+
+.input-box input.input-error {
+    border-color: rgb(252, 62, 62);
+}
+
+.input-box input.input-error:focus {
+    outline: none;
+    border-color: rgb(252, 62, 62);
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+.input-box input.input-success {
+    border-color: rgb(109, 222, 74);
+}
+
+.input-box input.input-success:focus {
+    outline: none;
+    border-color: rgb(109, 222, 74);
+    box-shadow: 0 0 5px rgba(51, 255, 0, 0.5);
+}
+
+.error-message {
+    color: rgb(252, 62, 62);
+    animation: fadeIn 0.3s ease;
+    font-size: 14px;
 }
