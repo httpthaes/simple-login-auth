@@ -17,6 +17,23 @@ icons.forEach(icon => {
     })
 });
 
+function setError(input, span) {
+    input.classList.remove('input-success', 'input-error')
+    void input.offsetWidth
+    input.classList.add('input-error')
+
+     if (span) {
+        span.classList.remove('error-message')
+        void span.offsetWidth
+        span.classList.add('error-message')
+    }
+}
+
+function setSuccess(input) {
+    input.classList.remove('input-error')
+    input.classList.add('input-success') 
+}
+
 // Registro
 const btnRegister = document.querySelector('#btn-register');
 
@@ -24,33 +41,39 @@ btnRegister.addEventListener('click', (event) => {
     event.preventDefault()
 
     // Validação nome
-    const name = document.querySelector('#name').value
+    const name = document.querySelector('#name')
     const nameError = document.querySelector('#name-error')
 
-    const hasNumber = /[0-9]/.test(name)
-    const hasSymbol = /[^a-zA-ZÀ-ÿ\s]/.test(name)
+    const hasNumber = /[0-9]/.test(name.value)
+    const hasSymbol = /[^a-zA-ZÀ-ÿ\s]/.test(name.value)
     const invalidName = hasNumber || hasSymbol
 
-    if (name.trim() === "") {
+    if (name.value.trim() === "") {
         nameError.textContent = "Por favor, digite um nome."
+        setError(name, nameError)
     } else if (invalidName) {
         nameError.textContent = "O nome não pode ter números ou símbolos."
+        setError(name, nameError)
     } else {
         nameError.textContent = ""
+        setSuccess(name)
     }
 
     // Validação e-mail
-    const email = document.querySelector('#email').value
+    const email = document.querySelector('#email')
     const emailError = document.querySelector('#email-error')
 
-    const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)
 
-    if (email.trim() === "") {
+    if (email.value.trim() === "") {
         emailError.textContent = "Por favor, digite um e-mail."
+        setError(email, emailError)
     } else if (!validEmail) {
         emailError.textContent = "O email precisa ter um formato válido (exemplo: joao123@gmail.com)"
+        setError(email, emailError)
     } else {
         emailError.textContent = ""
+        setSuccess(email)
     }
 
 
@@ -64,22 +87,30 @@ btnRegister.addEventListener('click', (event) => {
         return !tooShort && !hasSpace && hasUppercase && hasSymbol
     }
 
-    const password1 = document.querySelectorAll('.input-password')[0].value
-    const password2 = document.querySelectorAll('.input-password')[1].value
+    const password1 = document.querySelectorAll('.input-password')[0]
+    const password2 = document.querySelectorAll('.input-password')[1]
     const passwordError = document.querySelector('#password-error')
 
-    const passwordsMatch = password1 === password2
-    const emptyPasswords = password1.trim() == "" || password2.trim() == ""
-    const validPassword = validatePassword(password1)
+    const passwordsMatch = password1.value === password2.value
+    const emptyPasswords = password1.value.trim() == "" || password2.value.trim() == ""
+    const validPassword = validatePassword(password1.value)
 
     if (emptyPasswords) {
         passwordError.textContent = "Por favor, digite uma senha."
+        setError(password1)
+        setError(password2, passwordError)
     } else if (!passwordsMatch) {
         passwordError.textContent = "As senhas não coincidem. Tente novamente."
+        setError(password1)
+        setError(password2, passwordError)
     } else if (!validPassword) {
         passwordError.textContent = "A senha deve ter no mínimo 8 caracteres, uma letra maiúscula, um símbolo especial e sem espaços."
+        setError(password1)
+        setError(password2, passwordError)
     } else {
         passwordError.textContent = ""
+        setSuccess(password1)
+        setSuccess(password2)
     }
 
     if (!invalidName && validEmail && validPassword && passwordsMatch) {
